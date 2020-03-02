@@ -3,6 +3,8 @@ import './App.css';
 import { Route, Link } from "react-router-dom";
 import Login from './Login'
 import SignUp from './SignUp'
+
+
 function App() {
   return (
     <div className="App">
@@ -28,9 +30,6 @@ function App() {
       console.log('routeProps', routeProps);
     }}
     />
-
-
-
     </div>
 
   );
