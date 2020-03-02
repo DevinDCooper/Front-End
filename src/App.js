@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import { Route, Link } from "react-router-dom";
 import Login from './Login'
 import SignUp from './SignUp'
