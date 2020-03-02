@@ -18,27 +18,30 @@ function SignUpForm({ touched, errors, status, isSubmitting, values }) {
         <div className="SignUp-form">
         <Form>
             <label>
-            <Field type="name" name="name" placeholder="UserName" />
+            <Field type="name" name="name" placeholder="Create a UserName" />
             {touched.name && errors.name && (
             <p className="errors">{errors.name}</p>
             )}
             </label>
-
+            <br/>
             <label>
-        <Field type="email" name="email" placeholder="Email" />
+        <Field type="email" name="email" placeholder="Enter a Email" />
         {touched.email && errors.email && (
             <p className="errors">{errors.email}</p>
             )}
         </label>
+        <br/>
         <label>
-        <Field type="password" name="password" placeholder="Password" />
+        <Field type="password" name="password" placeholder="
+        
+        Create a Password" />
         {touched.password && errors.password && (
             <p className="errors">{errors.password}</p>
             )}
         </label>
 
-        
-        <button type= "submit" disabled={isSubmitting}>SignUp!</button>
+        <br/>
+        <button type= "submit" disabled={isSubmitting}>SignUp</button>
         </Form>
 
         {users.name && (

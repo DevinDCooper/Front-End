@@ -3,6 +3,7 @@ import axios from "axios";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 
+
 function LoginForm({ touched, errors, status, isSubmitting, values }) {
     console.log("This is our status", status);
     
@@ -23,16 +24,16 @@ function LoginForm({ touched, errors, status, isSubmitting, values }) {
             <p className="errors">{errors.name}</p>
             )}
             </label>
-
+            <br/>
         <label>
         <Field type="password" name="password" placeholder="Password" />
         {touched.password && errors.password && (
             <p className="errors">{errors.password}</p>
             )}
         </label>
-
+        <br/>
         
-        <button type= "submit" disabled={isSubmitting}>Login!</button>
+        <button type= "submit" disabled={isSubmitting}>Login</button>
         </Form>
 
         {users.name && (
