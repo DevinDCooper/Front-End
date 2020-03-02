@@ -12,7 +12,7 @@ const NavLink = () => {
   return (
     <div>
       <Navbar color="faded" light>
-        <NavbarBrand href="/" className="gym">OnTheGoFitness</NavbarBrand>
+        <NavbarBrand href="/" className="gym">AnyWhereFitness</NavbarBrand>
         <NavbarToggler onClick={toggleNavbar} className="burger" />
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar>
