@@ -9,7 +9,7 @@ function SignUpForm({ touched, errors, status, isSubmitting, values }) {
     const [users, setUsers] = useState({});
 
     useEffect(() => {
-      status && setUsers(status);
+        status && setUsers(status);
     }, [status]);
 
 
@@ -17,20 +17,17 @@ function SignUpForm({ touched, errors, status, isSubmitting, values }) {
     return (
         <div className="SignUp-form">
         <Form>
+        <p className="clearFix">
             <label>
+            <h3>Create account </h3>
             <Field type="name" name="name" placeholder="Create a UserName" />
             {touched.name && errors.name && (
             <p className="errors">{errors.name}</p>
             )}
             </label>
+            </p>
             <br/>
-            <label>
-        <Field type="email" name="email" placeholder="Enter a Email" />
-        {touched.email && errors.email && (
-            <p className="errors">{errors.email}</p>
-            )}
-        </label>
-        <br/>
+        <p className="clearFix">
         <label>
         <Field type="password" name="password" placeholder="
         
@@ -39,9 +36,30 @@ function SignUpForm({ touched, errors, status, isSubmitting, values }) {
             <p className="errors">{errors.password}</p>
             )}
         </label>
+        <label>
+           Client or Instructor?: 
+          <Field component="select" className="GymRole" name="Role">
+            <option>Choose an Option</option>
+            <option value="herbivore">Client</option>
+            <option value="carnivore">Instructor</option>
+           
+          </Field>
+        </label>
 
+
+        </p>
         <br/>
+        <p className="clearFix">
+        <label  className= " checkbox-container">
+        Terms of Service
+        <Field type= "checkbox"  name= "Terms" id= "Terms"/>
+        </label>
+        </p>
+        <br/>
+        <p className="clearFix">
         <button type= "submit" disabled={isSubmitting}>SignUp</button>
+        </p>
+
         </Form>
 
         {users.name && (

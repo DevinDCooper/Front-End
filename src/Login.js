@@ -10,30 +10,37 @@ function LoginForm({ touched, errors, status, isSubmitting, values }) {
     const [users, setUsers] = useState({});
 
     useEffect(() => {
-      status && setUsers(status);
+        status && setUsers(status);
     }, [status]);
 
 
 
     return (
+        
         <div className="Login-form">
+                
         <Form>
+            <p className="clearFix">
             <label>
+            <h3>Login</h3>
             <Field type="name" name="name" placeholder="UserName" />
             {touched.name && errors.name && (
             <p className="errors">{errors.name}</p>
             )}
             </label>
-            <br/>
+            </p>
+            
+            <p className ="clearFix">
         <label>
         <Field type="password" name="password" placeholder="Password" />
         {touched.password && errors.password && (
             <p className="errors">{errors.password}</p>
             )}
         </label>
-        <br/>
-        
+        </p>
+        <p class="clearfix">
         <button type= "submit" disabled={isSubmitting}>Login</button>
+        </p>
         </Form>
 
         {users.name && (
@@ -42,12 +49,8 @@ function LoginForm({ touched, errors, status, isSubmitting, values }) {
         <li>Password: {users.password}</li>
         </ul>
     )}
-
-
         </div>
         
-        
-
     );
     }
     
@@ -73,7 +76,7 @@ function LoginForm({ touched, errors, status, isSubmitting, values }) {
 
         }),
         handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
-               console.log("Submitting!")
+                console.log("Submitting!")
                 axios
                 .post(" https://reqres.in/api/users", values)
                 .then(res => {
